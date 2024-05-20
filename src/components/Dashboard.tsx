@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchActivities } from "../api";
 import { DeveloperActivity } from "../types/types";
+import ActivityChart from "./ActivityChart";
 
 const Dashboard: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -23,7 +24,8 @@ const Dashboard: React.FC = () => {
   return (
     <div>
       <h1>Developer Activities Dashboard</h1>
-      {/* Render charts, tables, and other UI components here */}
+      {data.length > 0 ? <ActivityChart data={data} /> : <p>Loading data...</p>}
+
     </div>
   );
 };

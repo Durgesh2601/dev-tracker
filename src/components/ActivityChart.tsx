@@ -32,7 +32,7 @@ const ActivityChart: React.FC<ActivityChartProps> = ({
   return (
     <div className="chart-wrapper">
       <h3>{data.name}</h3>
-      <BarChart width={900} height={300} data={chartData} className="chart">
+      <BarChart width={1000} height={300} data={chartData} className="chart">
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />

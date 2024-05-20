@@ -77,14 +77,6 @@ The application is deployed on Vercel. You can access it via the following link:
 
 [https://dev-tracker-three.vercel.app/](https://dev-tracker-three.vercel.app/)
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request or open an issue to improve the application.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
 ---
 
 **Author**: Durgesh Kumar Singh

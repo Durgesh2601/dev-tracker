@@ -6,7 +6,7 @@ The Developer Activities Dashboard is a web application designed to visualize th
 
 ### Deployed Link
 
-`https://dev-tracker-three.vercel.app/`
+[https://dev-tracker-three.vercel.app/](https://dev-tracker-three.vercel.app/)
 
 ## Features
 

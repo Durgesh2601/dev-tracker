@@ -29,8 +29,7 @@ The Developer Activities Dashboard is a web application designed to visualize th
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/developer-activities-dashboard.git
-   cd developer-activities-dashboard
+   git clone https://github.com/Durgesh2601/dev-tracker.git
    ```
 
 2. Install the dependencies:

@@ -1,38 +1,37 @@
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
-import { DeveloperActivity } from "../types/types";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from "recharts";
+import { AuthorWorklog, ActivityMeta } from "../types/types";
+import './ActivityChart.css';
 
 interface ActivityChartProps {
-  data: DeveloperActivity[];
+  data: AuthorWorklog;
+  activityMeta: ActivityMeta[];
 }
 
-const ActivityChart: React.FC<ActivityChartProps> = ({ data }) => {
-  const chartData = data.map((dev) => ({
-    name: dev.developer,
-    commits: dev.activities.filter((a) => a.type === "commit").length,
-    pullRequestsOpened: dev.activities.filter(
-      (a) => a.type === "pull_request_opened"
-    ).length,
-    pullRequestsMerged: dev.activities.filter(
-      (a) => a.type === "pull_request_merged"
-    ).length,
-    meetings: dev.activities.filter((a) => a.type === "meeting").length,
-    documentation: dev.activities.filter((a) => a.type === "documentation")
-      .length,
-  }));
+const ActivityChart: React.FC<ActivityChartProps> = ({ data, activityMeta }) => {
+  const chartData = activityMeta.map((meta) => {
+    const activity = data.totalActivity.find((a) => a.name === meta.label);
+    return {
+      name: meta.label,
+      value: activity ? Number(activity.value) : 0,
+      fill: meta.fillColor,
+    };
+  });
 
   return (
-    <BarChart width={600} height={300} data={chartData}>
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="commits" fill="#8884d8" />
-      <Bar dataKey="pullRequestsOpened" fill="#82ca9d" />
-      <Bar dataKey="pullRequestsMerged" fill="#ffc658" />
-      <Bar dataKey="meetings" fill="#ff8042" />
-      <Bar dataKey="documentation" fill="#8dd1e1" />
-    </BarChart>
+    <div className="chart-wrapper">
+      <h3>{data?.name}</h3>
+      <BarChart width={600} height={300} data={chartData} className="chart">
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        {chartData?.map((entry, index) => (
+          <Bar key={`bar-${index}`} dataKey="value" fill={entry.fill} />
+        ))}
+      </BarChart>
+    </div>
   );
 };
 

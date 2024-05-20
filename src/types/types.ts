@@ -8,29 +8,34 @@ export interface TotalActivity {
   value: string;
 }
 
+export interface DayWiseActivityItem {
+  count: string;
+  label: string;
+  fillColor: string;
+}
+
 export interface DayWiseActivity {
   date: string;
   items: {
-    children: {
-      count: string;
-      label: string;
-      fillColor: string;
-    }[];
+    children: DayWiseActivityItem[];
   };
+}
+
+export interface ActiveDays {
+  days: number;
+  isBurnOut: boolean;
+  insight: string[];
 }
 
 export interface AuthorWorklog {
   name: string;
   totalActivity: TotalActivity[];
   dayWiseActivity: DayWiseActivity[];
-  activeDays: {
-    days: number;
-    isBurnOut: boolean;
-    insight: string[];
-  };
+  activeDays: ActiveDays;
 }
 
 export interface AuthorWorklogData {
+  AuthorWorklog: any;
   activityMeta: ActivityMeta[];
   rows: AuthorWorklog[];
 }

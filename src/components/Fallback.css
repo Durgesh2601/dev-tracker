@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.bodyText {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

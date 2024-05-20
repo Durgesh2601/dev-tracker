@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface ActivityMeta {
   label: string;
   fillColor: string;
@@ -38,4 +40,13 @@ export interface AuthorWorklogData {
   AuthorWorklog: any;
   activityMeta: ActivityMeta[];
   rows: AuthorWorklog[];
+}
+
+export interface ErrorBoundaryProps {
+  children: ReactNode;
+  fallback: ReactNode;
+}
+
+export interface ErrorBoundaryState {
+  hasError: boolean;
 }

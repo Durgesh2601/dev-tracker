@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+# Developer Activities Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Developer Activities Dashboard is a web application designed to visualize the activities of developers. It provides insights into various metrics such as pull requests (PRs) opened, PRs merged, commits, PR reviews, PR comments, incident alerts, and incidents resolved over a period of time. Users can filter activities using checkboxes to customize the displayed data.
 
-In the project directory, you can run:
+### Deployed Link
 
-### `npm start`
+[Developer Activities Dashboard](https://dev-tracker-three.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Activity Visualization**: Displays a bar chart of developer activities.
+- **Interactive Filters**: Allows users to filter activities using checkboxes.
+- **Responsive Design**: Ensures the dashboard is accessible on various devices.
+- **Dynamic Data Fetching**: Fetches data from an API and dynamically updates the charts.
+- **Error Handling**: Implements an error boundary with a fallback component to handle errors gracefully.
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React**: JavaScript library for building user interfaces.
+- **TypeScript**: Typed superset of JavaScript for improved development experience.
+- **Recharts**: Library for building charts in React.
+- **CSS**: Styling the components to create an interactive and responsive design.
+- **Vercel**: Platform for deploying the application.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/yourusername/developer-activities-dashboard.git
+   cd developer-activities-dashboard
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install the dependencies:
 
-### `npm run eject`
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Start the development server:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+- **src/components/ActivityChart.tsx**: Component for rendering the bar chart of activities.
+- **src/components/Dashboard.tsx**: Main component for the dashboard, including filters and charts.
+- **src/components/ErrorBoundary.tsx**: Error boundary component to catch and handle errors.
+- **src/components/FallbackComponent.tsx**: Fallback UI component to display when an error is caught by the error boundary.
+- **src/api/index.ts**: API function to fetch activities data.
+- **src/types/types.ts**: TypeScript types used in the application.
+- **src/App.tsx**: Root component of the application.
+- **src/index.tsx**: Entry point of the application.
+- **src/styles/Dashboard.css**: CSS styles for the dashboard and filters.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Dashboard**: The main view displaying a list of developers and their activities.
+2. **Filters**: Checkboxes at the top allow users to select which activities to display on the chart.
+3. **Charts**: Visual representation of the selected activities over time for each developer.
+
+## Development
+
+- **React Components**: The application is structured using functional components.
+- **State Management**: `useState` and `useEffect` hooks are used to manage state and side effects.
+- **Dynamic Rendering**: The chart data is dynamically rendered based on the selected filters.
+- **Error Handling**: The `ErrorBoundary` component is used to catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed.
+
+## Deployment
+
+The application is deployed on Vercel. You can access it via the following link:
+
+[https://dev-tracker-three.vercel.app/](https://dev-tracker-three.vercel.app/)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue to improve the application.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+---
+
+**Author**: Durgesh Kumar Singh
+
+Feel free to contact me at [dk829445@gmail.com](mailto:dk829445@gmail.com) for any questions or feedback.

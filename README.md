@@ -12,7 +12,6 @@ The Developer Activities Dashboard is a web application designed to visualize th
 
 - **Activity Visualization**: Displays a bar chart of developer activities.
 - **Interactive Filters**: Allows users to filter activities using checkboxes.
-- **Responsive Design**: Ensures the dashboard is accessible on various devices.
 - **Dynamic Data Fetching**: Fetches data from an API and dynamically updates the charts.
 - **Error Handling**: Implements an error boundary with a fallback component to handle errors gracefully.
 

@@ -32,6 +32,7 @@ const Dashboard: React.FC = () => {
   return (
     <div className="container">
       <h1>Developer Activities Dashboard</h1>
+      <button onClick={() => {throw new Error('Test error')}}>ThrowError</button>
       <div className="filter-container">
         {data?.AuthorWorklog?.activityMeta.map((meta: ActivityMeta) => (
           <label key={meta.label} className="filter-label">
